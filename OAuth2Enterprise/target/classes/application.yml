@@ -1,0 +1,42 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: Ov23liflNLbMpSBS9kRK
+            client-secret: 0e7f186ed19368ba654b0e31f0a36419522f98af
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/github
+          google:
+            client-id: 652868899869-ilnq9aap6tsrb95jrs9eo11kbpdnmlpt.apps.googleusercontent.com
+            client-secret: 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
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/google
+          spotify:
+            client-id: 259b4b74b94248c28b58de4c0236c8bc
+            client-secret: b6c34141d6f04f28b5f7caf13e81f685
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/spotify
+            scope: user-read-email, user-read-private
+          discord:
+            client-id: 1256579881383231569
+            client-secret: 9YyMl8vAAb1ScELNDeESaVqPQYkP0pxY
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/discord
+            scope: identify,email
+        provider:
+          spotify:
+            authorization-uri: https://accounts.spotify.com/authorize
+            token-uri: https://accounts.spotify.com/api/token
+            user-info-uri: https://api.spotify.com/v1/me
+            user-name-attribute: display_name
+          discord:
+            authorization-uri: https://discord.com/api/oauth2/authorize
+            token-uri: https://discord.com/api/oauth2/token
+            user-info-uri: https://discord.com/api/users/@me
+            user-name-attribute: username
+
+# logging:
+#  level:
+#    org.springframework.security: DEBUG
